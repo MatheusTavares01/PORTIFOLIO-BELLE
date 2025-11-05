@@ -1,307 +1,321 @@
 /* ======== CONFIGURAÇÕES GLOBAIS ======== */
 :root {
-    --cor-primaria: #1a1a1a; /* Um preto/cinza escuro forte */
-    --cor-secundaria: #f4f4f4; /* Um cinza bem claro para o fundo */
-    --cor-realce: #007BFF; /* Um azul vibrante para botões (ex: azul) */
-    --cor-vivo-roxo: #660099; /* Roxo oficial da Vivo */
-    --cor-primaria: #1a1a1a;
-    --cor-secundaria: #f4f4f4;
-    
-    /* == NOVA PALETA DE CORES COM PERSONALIDADE == */
-    --cor-acento-principal: #6366F1; /* Um índigo/violeta moderno */
-    --cor-acento-secundario: #8B5CF6; /* Um violeta complementar */
-    --gradiente-moderno: linear-gradient(135deg, var(--cor-acento-principal) 0%, var(--cor-acento-secundario) 100%);
-    
-    --cor-vivo-roxo: #660099; /* Roxo oficial da Vivo (usado apenas na seção de experiência) */
-    --fonte-padrao: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+   --cor-primaria: #1a1a1a; /* Um preto/cinza escuro forte */
+   --cor-secundaria: #f4f4f4; /* Um cinza bem claro para o fundo */
+   --cor-realce: #007BFF; /* Um azul vibrante para botões (ex: azul) */
+   --cor-vivo-roxo: #660099; /* Roxo oficial da Vivo */
+   --fonte-padrao: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
-@@ -14,7 +19,7 @@
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
 }
 
 html {
-    scroll-behavior: smooth; /* Rolagem suave ao clicar nos links */
-    scroll-behavior: smooth;
+   scroll-behavior: smooth; /* Rolagem suave ao clicar nos links */
 }
 
 body {
-@@ -27,7 +32,7 @@ body {
+   font-family: var(--fonte-padrao);
+   background-color: var(--cor-secundaria);
+   color: var(--cor-primaria);
+   line-height: 1.6;
+}
+
 img {
-    max-width: 100%;
-    height: auto;
-    display: block; /* Remove espaço extra abaixo das imagens */
-    display: block;
+   max-width: 100%;
+   height: auto;
+   display: block; /* Remove espaço extra abaixo das imagens */
 }
 
 .container {
-@@ -41,7 +46,7 @@ header {
-    background-color: #ffffff;
-    padding: 1rem 0;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    position: sticky; /* Fica fixo no topo */
-    position: sticky;
-    top: 0;
-    z-index: 100;
+   max-width: 1200px;
+   margin: 0 auto;
+   padding: 0 20px;
 }
-@@ -55,7 +60,8 @@ header nav {
+
+/* ======== CABEÇALHO E NAVEGAÇÃO ======== */
+header {
+   background-color: #ffffff;
+   padding: 1rem 0;
+   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+   position: sticky; /* Fica fixo no topo */
+   top: 0;
+   z-index: 100;
+}
+
+header nav {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
 .logo {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--cor-primaria);
-    /* MUDANÇA: Cor com personalidade */
-    color: var(--cor-acento-principal);
+   font-size: 1.5rem;
+   font-weight: 700;
+   color: var(--cor-primaria);
 }
 
 .nav-links {
-@@ -75,12 +81,15 @@ header nav {
+   list-style: none;
+   display: flex;
+}
+
+.nav-links li {
+   margin-left: 2rem;
+}
+
+.nav-links a {
+   text-decoration: none;
+   color: var(--cor-primaria);
+   font-weight: 400;
+   transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
-    color: var(--cor-realce);
-    /* MUDANÇA: Usando a nova cor de acento */
-    color: var(--cor-acento-principal);
+   color: var(--cor-realce);
 }
 
 /* ======== SEÇÃO HERO ======== */
 .hero {
-    /* MUDANÇA: Fundo preto é ótimo, mas vamos dar um gradiente sutil escuro */
-    background-color: var(--cor-primaria);
-    background-image: linear-gradient(135deg, #1a1a1a 0%, #2b2b2b 100%);
-    color: #ffffff;
-    text-align: center;
-    padding: 6rem 2rem;
-@@ -101,89 +110,94 @@ header nav {
+   background-color: var(--cor-primaria);
+   color: #ffffff;
+   text-align: center;
+   padding: 6rem 2rem;
+}
+
+.hero h1 {
+   font-size: 3rem;
+   margin-bottom: 1rem;
+}
+
+.hero p {
+   font-size: 1.25rem;
+   max-width: 600px;
+   margin: 0 auto 2rem auto;
+   font-weight: 300;
+}
+
 /* Botão de Call-to-Action (CTA) */
 .cta-button {
-    display: inline-block;
-    background-color: var(--cor-realce);
-    /* MUDANÇA: De cor sólida para gradiente */
-    background-image: var(--gradiente-moderno);
-    color: #ffffff;
-    padding: 0.75rem 1.5rem;
-    border-radius: 5px;
-    padding: 0.75rem 1.75rem; /* Um pouco mais de padding lateral */
-    border-radius: 8px; /* Mais arredondado */
-    text-decoration: none;
-    font-weight: 700;
-    transition: transform 0.3s ease, background-color 0.3s ease;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: none; /* Remove borda caso haja */
-    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4); /* Sombra da cor do gradiente */
+   display: inline-block;
+   background-color: var(--cor-realce);
+   color: #ffffff;
+   padding: 0.75rem 1.5rem;
+   border-radius: 5px;
+   text-decoration: none;
+   font-weight: 700;
+   transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 .cta-button:hover {
-    background-color: #0056b3; /* Um azul mais escuro no hover */
-    transform: translateY(-2px);
-    /* MUDANÇA: Efeito de "lift" mais pronunciado */
-    background-image: var(--gradiente-moderno);
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
+   background-color: #0056b3; /* Um azul mais escuro no hover */
+   transform: translateY(-2px);
 }
 
 .cta-button.secondary {
-    background-image: none; /* Botão secundário não tem gradiente */
-    background-color: #6c757d;
-    margin-left: 1rem;
-    box-shadow: none;
+   background-color: #6c757d;
+   margin-left: 1rem;
 }
 
 .cta-button.secondary:hover {
-    background-image: none;
-    background-color: #5a6268;
-    transform: translateY(-2px);
-    box-shadow: none;
+   background-color: #5a6268;
 }
 
 /* ======== SEÇÃO DE EXPERIÊNCIA (REFEITA COM PERSONALIDADE) ======== */
-/* ======== SEÇÃO DE EXPERIÊNCIA (Estilo do vivo.html) ======== */
-/* Esta seção permanece com o Roxo da Vivo, intencionalmente */
 .experience-section {
-    padding: 5rem 2rem;
-    background-color: #ffffff; /* Fundo branco para destacar */
-    background-color: #ffffff;
-    border-top: 1px solid #e0e0e0;
-    border-bottom: 1px solid #e0e0e0;
+   padding: 5rem 2rem;
+   background-color: #ffffff; /* Fundo branco para destacar */
+   border-top: 1px solid #e0e0e0;
+   border-bottom: 1px solid #e0e0e0;
 }
 
 .experience-content-wrapper {
-    display: grid;
-    grid-template-columns: 1fr; /* Mobile-first: 1 coluna */
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    max-width: 1100px;
-    margin: 0 auto;
-    align-items: center;
+   display: grid;
+   grid-template-columns: 1fr; /* Mobile-first: 1 coluna */
+   gap: 2rem;
+   max-width: 1100px;
+   margin: 0 auto;
+   align-items: center;
 }
 
 /* Layout para telas maiores (tablets e desktops) */
 @media (min-width: 768px) {
-    .experience-content-wrapper {
-        /* Layout assimétrico: 1 parte para o título, 2 para o texto */
-        grid-template-columns: 1fr 2fr; 
-        gap: 3rem;
-    }
+   .experience-content-wrapper {
+       /* Layout assimétrico: 1 parte para o título, 2 para o texto */
+       grid-template-columns: 1fr 2fr;
+       gap: 3rem;
+   }
 }
 
 /* Lado Esquerdo: O Título */
 .experience-title-side {
-    display: flex;
-    justify-content: flex-start; /* Alinha à esquerda no mobile */
-    justify-content: flex-start;
+   display: flex;
+   justify-content: flex-start; /* Alinha à esquerda no mobile */
 }
 
 .experience-title-side h2 {
-    font-size: 2.8rem;
-    color: var(--cor-vivo-roxo);
-    line-height: 1.2;
-    font-weight: 700;
-    /* Linha roxa forte para dar personalidade */
-    border-left: 5px solid var(--cor-vivo-roxo);
-    padding-left: 1.5rem;
+   font-size: 2.8rem;
+   color: var(--cor-vivo-roxo);
+   line-height: 1.2;
+   font-weight: 700;
+   /* Linha roxa forte para dar personalidade */
+   border-left: 5px solid var(--cor-vivo-roxo);
+   padding-left: 1.5rem;
 }
 
 @media (min-width: 768px) {
-    .experience-title-side {
-        justify-content: flex-end; /* Alinha à direita no desktop */
-        justify-content: flex-end;
-    }
-
-    .experience-title-side h2 {
-        border-left: 0;
-        padding-left: 0;
-        /* Vira a borda para a direita */
-        border-right: 5px solid var(--cor-vivo-roxo);
-        padding-right: 1.5rem;
-        text-align: right;
-    }
+   .experience-title-side {
+       justify-content: flex-end; /* Alinha à direita no desktop */
+   }
+   
+   .experience-title-side h2 {
+       border-left: 0;
+       padding-left: 0;
+       /* Vira a borda para a direita */
+       border-right: 5px solid var(--cor-vivo-roxo);
+       padding-right: 1.5rem;
+       text-align: right;
+   }
 }
 
 /* Lado Direito: O Texto */
 .experience-text-side {
-    background-color: #fbf7ff; /* Fundo roxo pálido, como antes */
-    background-color: #fbf7ff;
-    border-radius: 8px;
-    padding: 2.5rem;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
-@@ -196,7 +210,6 @@ header nav {
-    margin-bottom: 1.5rem;
+   background-color: #fbf7ff; /* Fundo roxo pálido, como antes */
+   border-radius: 8px;
+   padding: 2.5rem;
+   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+}
+
+.experience-text-side p {
+   font-size: 1.1rem;
+   color: #333;
+   line-height: 1.7;
+   margin-bottom: 1.5rem;
 }
 
 /* A CITAÇÃO EM DESTAQUE */
 .experience-text-side blockquote {
-    font-size: 1.4rem;
-    font-weight: 700;
-@@ -205,10 +218,9 @@ header nav {
-    text-align: center;
-    margin: 2.5rem 0;
-    padding: 1.5rem;
-    /* Bordas roxas duplas para estilo */
-    border-top: 3px solid var(--cor-vivo-roxo);
-    border-bottom: 3px solid var(--cor-vivo-roxo);
-    background-color: #ffffff; /* Fundo branco para destacar do roxo pálido */
-    background-color: #ffffff;
-    border-radius: 8px;
-    quotes: "“" "”";
+   font-size: 1.4rem;
+   font-weight: 700;
+   line-height: 1.5;
+   color: var(--cor-vivo-roxo);
+   text-align: center;
+   margin: 2.5rem 0;
+   padding: 1.5rem;
+   /* Bordas roxas duplas para estilo */
+   border-top: 3px solid var(--cor-vivo-roxo);
+   border-bottom: 3px solid var(--cor-vivo-roxo);
+   background-color: #ffffff; /* Fundo branco para destacar do roxo pálido */
+   border-radius: 8px;
+   quotes: "“" "”";
 }
-@@ -230,43 +242,55 @@ header nav {
+
+.experience-text-side p:last-child {
+   margin-bottom: 0;
+}
+
+
+/* ======== GALERIA MASONRY ======== */
+.gallery-section {
+   padding: 4rem 2rem;
+}
+
+.gallery-section h2 {
+   text-align: center;
+   font-size: 2.5rem;
+   margin-bottom: 3rem;
 }
 
 .masonry-grid {
-    /* A MÁGICA ACONTECE AQUI */
-    column-count: 3; /* 3 colunas em telas grandes */
-    column-count: 3;
-    column-gap: 1.5rem;
+   column-count: 3; /* 3 colunas em telas grandes */
+   column-gap: 1.5rem;
 }
 
 .grid-item {
-    /* Evita que um item se quebre entre duas colunas */
-    break-inside: avoid;
-    margin-bottom: 1.5rem;
-    border-radius: 8px;
-    overflow: hidden; /* Garante que a borda arredondada pegue na imagem */
-    overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    background-color: #ffffff;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+   break-inside: avoid;
+   margin-bottom: 1.5rem;
+   border-radius: 8px;
+   overflow: hidden;
+   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+   background-color: #ffffff;
+   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .grid-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
-    /* MUDANÇA: Efeito de "lift" mais forte */
-    transform: translateY(-8px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+   transform: translateY(-5px);
+   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
 }
 
 .grid-item img {
-    width: 100%;
+   width: 100%;
 }
 
 .item-text {
-    padding: 1rem;
-    padding: 1.5rem;
+   padding: 1.5rem; /* Aumentei o padding */
 }
 
 .item-text h3 {
-    font-size: 1.2rem;
-    margin-bottom: 0.25rem;
-    margin-bottom: 0.75rem;
-    /* MUDANÇA: Adiciona transição para a cor */
-    transition: color 0.3s ease;
+   font-size: 1.2rem;
+   margin-bottom: 0.75rem; /* Aumentei a margem */
 }
 
-/* MUDANÇA: Título muda de cor no hover */
-.grid-item:hover .item-text h3 {
-    color: var(--cor-acento-principal);
-}
-
+/* ATUALIZAÇÃO AQUI para os novos parágrafos */
 .item-text p {
-    font-size: 0.9rem;
-    color: #555;
-    line-height: 1.6;
-    margin-bottom: 1rem;
+   font-size: 0.9rem;
+   color: #555;
+   line-height: 1.6;
+   margin-bottom: 1rem; /* Adiciona espaço entre parágrafos */
 }
 
 .item-text p:last-of-type {
-    margin-bottom: 0;
+   margin-bottom: 0; /* Remove a margem do último parágrafo */
 }
 
 /* ======== SEÇÃO DE CONTATO ======== */
-@@ -282,7 +306,7 @@ footer {
-    color: var(--cor-secundaria);
-    text-align: center;
-    padding: 2.5rem 0;
-    margin-top: 2rem; /* Espaço acima do rodapé */
-    margin-top: 2rem;
+.contact-section {
+   background-color: #ffffff;
+   text-align: center;
+   padding: 4rem 2rem;
+}
+
+/* ======== RODAPÉ (ATUALIZADO SIMPLES) ======== */
+footer {
+   background-color: var(--cor-primaria);
+   color: var(--cor-secundaria);
+   text-align: center;
+   padding: 2.5rem 0;
+   margin-top: 2rem; /* Espaço acima do rodapé */
 }
 
 footer p {
-@@ -292,25 +316,22 @@ footer p {
+   font-size: 0.9rem;
+   margin: 0;
+}
 
 
 /* ======== RESPONSIVIDADE ======== */
 
 /* Para tablets */
 @media (max-width: 1024px) {
-    .masonry-grid {
-        column-count: 2; /* 2 colunas */
-        column-count: 2;
-    }
+   .masonry-grid {
+       column-count: 2; /* 2 colunas */
+   }
 }
 
 /* Para celulares */
 @media (max-width: 768px) {
-    .hero h1 {
-        font-size: 2.5rem;
-    }
+   .hero h1 {
+       font-size: 2.5rem;
+   }
 
-    .nav-links {
-        display: none; /* Em um projeto real, aqui entraria um menu "hambúrguer" com JS */
-        display: none;
-    }
-
-    .masonry-grid {
-        column-count: 1; /* 1 coluna */
-        column-count: 1;
-    }
+   .nav-links {
+       display: none; /* Em um projeto real, aqui entraria um menu "hambúrguer" com JS */
+   }
+   
+   .masonry-grid {
+       column-count: 1; /* 1 coluna */
+   }
 }
