@@ -1,316 +1,155 @@
-/* ======== CONFIGURAÇÕES GLOBAIS ======== */
-:root {
-    --cor-primaria: #1a1a1a; /* Um preto/cinza escuro forte */
-    --cor-secundaria: #f4f4f4; /* Um cinza bem claro para o fundo */
-    --cor-realce: #007BFF; /* Um azul vibrante para botões (ex: azul) */
-    --cor-vivo-roxo: #660099; /* Roxo oficial da Vivo */
-    --fonte-padrao: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth; /* Rolagem suave ao clicar nos links */
-}
-
-body {
-    font-family: var(--fonte-padrao);
-    background-color: var(--cor-secundaria);
-    color: var(--cor-primaria);
-    line-height: 1.6;
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-    display: block; /* Remove espaço extra abaixo das imagens */
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* ======== CABEÇALHO E NAVEGAÇÃO ======== */
-header {
-    background-color: #ffffff;
-    padding: 1rem 0;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    position: sticky; /* Fica fixo no topo */
-    top: 0;
-    z-index: 100;
-}
-
-header nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--cor-primaria);
-}
-
-.nav-links {
-    list-style: none;
-    display: flex;
-}
-
-.nav-links li {
-    margin-left: 2rem;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: var(--cor-primaria);
-    font-weight: 400;
-    transition: color 0.3s ease;
-}
-
-.nav-links a:hover {
-    color: var(--cor-realce);
-}
-
-/* ======== SEÇÃO HERO ======== */
-.hero {
-    background-color: var(--cor-primaria);
-    color: #ffffff;
-    text-align: center;
-    padding: 6rem 2rem;
-}
-
-.hero h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-}
-
-.hero p {
-    font-size: 1.25rem;
-    max-width: 600px;
-    margin: 0 auto 2rem auto;
-    font-weight: 300;
-}
-
-/* Botão de Call-to-Action (CTA) */
-.cta-button {
-    display: inline-block;
-    background-color: var(--cor-realce);
-    color: #ffffff;
-    padding: 0.75rem 1.5rem;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: 700;
-    transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-.cta-button:hover {
-    background-color: #0056b3; /* Um azul mais escuro no hover */
-    transform: translateY(-2px);
-}
-
-.cta-button.secondary {
-    background-color: #6c757d;
-    margin-left: 1rem;
-}
-
-.cta-button.secondary:hover {
-    background-color: #5a6268;
-}
-
-/* ======== SEÇÃO DE EXPERIÊNCIA (REFEITA COM PERSONALIDADE) ======== */
-.experience-section {
-    padding: 5rem 2rem;
-    background-color: #ffffff; /* Fundo branco para destacar */
-    border-top: 1px solid #e0e0e0;
-    border-bottom: 1px solid #e0e0e0;
-}
-
-.experience-content-wrapper {
-    display: grid;
-    grid-template-columns: 1fr; /* Mobile-first: 1 coluna */
-    gap: 2rem;
-    max-width: 1100px;
-    margin: 0 auto;
-    align-items: center;
-}
-
-/* Layout para telas maiores (tablets e desktops) */
-@media (min-width: 768px) {
-    .experience-content-wrapper {
-        /* Layout assimétrico: 1 parte para o título, 2 para o texto */
-        grid-template-columns: 1fr 2fr; 
-        gap: 3rem;
-    }
-}
-
-/* Lado Esquerdo: O Título */
-.experience-title-side {
-    display: flex;
-    justify-content: flex-start; /* Alinha à esquerda no mobile */
-}
-
-.experience-title-side h2 {
-    font-size: 2.8rem;
-    color: var(--cor-vivo-roxo);
-    line-height: 1.2;
-    font-weight: 700;
-    /* Linha roxa forte para dar personalidade */
-    border-left: 5px solid var(--cor-vivo-roxo);
-    padding-left: 1.5rem;
-}
-
-@media (min-width: 768px) {
-    .experience-title-side {
-        justify-content: flex-end; /* Alinha à direita no desktop */
-    }
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio Digital</title>
+    <link rel="stylesheet" href="pessoais.css">
     
-    .experience-title-side h2 {
-        border-left: 0;
-        padding-left: 0;
-        /* Vira a borda para a direita */
-        border-right: 5px solid var(--cor-vivo-roxo);
-        padding-right: 1.5rem;
-        text-align: right;
-    }
-}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
 
-/* Lado Direito: O Texto */
-.experience-text-side {
-    background-color: #fbf7ff; /* Fundo roxo pálido, como antes */
-    border-radius: 8px;
-    padding: 2.5rem;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
-}
+    <header>
+        <nav class="container">
+            <div class="logo">Isabelle Vitória Gomes De Moura</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
 
-.experience-text-side p {
-    font-size: 1.1rem;
-    color: #333;
-    line-height: 1.7;
-    margin-bottom: 1.5rem;
-}
+    <main>
 
-/* A CITAÇÃO EM DESTAQUE */
-.experience-text-side blockquote {
-    font-size: 1.4rem;
-    font-weight: 700;
-    line-height: 1.5;
-    color: var(--cor-vivo-roxo);
-    text-align: center;
-    margin: 2.5rem 0;
-    padding: 1.5rem;
-    /* Bordas roxas duplas para estilo */
-    border-top: 3px solid var(--cor-vivo-roxo);
-    border-bottom: 3px solid var(--cor-vivo-roxo);
-    background-color: #ffffff; /* Fundo branco para destacar do roxo pálido */
-    border-radius: 8px;
-    quotes: "“" "”";
-}
+        <section class="hero">
+            <div class="container">
+                <h1>Estética & Lifestyle | Visual & Criatividade</h1>
+                <p>Criando conteúdo dinâmico e transformações visuais que engajam, inspiram e impactam. Veja abaixo meus trabalhos.</p>
+                <a href="#portfolio" class="cta-button">Ver Trabalhos</a>
+            </div>
+        </section>
 
-.experience-text-side p:last-child {
-    margin-bottom: 0;
-}
+        <section id="portfolio" class="gallery-section container">
+            <h2>Portfólio Criativo</h2>
 
+            <div class="masonry-grid">
 
-/* ======== GALERIA MASONRY ======== */
-.gallery-section {
-    padding: 4rem 2rem;
-}
+                <div class="grid-item">
+                    <img src="img/halloween-chapeleiro-rainha.jpg" alt="Maquiagem de Chapeleiro Maluco e Rainha de Copas para Halloween">
+                    <div class="item-text">
+                        <h3>Caracterização Temática (Halloween)</h3>
+                        <p>Produção de maquiagem e figurino para Chapeleiro Maluco e Rainha de Copas.</p>
+                    </div>
+                </div>
 
-.gallery-section h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 3rem;
-}
+                <div class="grid-item">
+                    <img src="img/grupo-halloween.jpeg" alt="Grupo fantasiado de Chapeleiro, Rainha de Copas, Alice zumbi e Coelho para Halloween">
+                    <div class="item-text">
+                        <h3>Produção de Grupo (Halloween)</h3>
+                        <p>Criação e execução de maquiagem e fantasias para grupo temático.</p>
+                    </div>
+                </div>
 
-.masonry-grid {
-    /* A MÁGICA ACONTECE AQUI */
-    column-count: 3; /* 3 colunas em telas grandes */
-    column-gap: 1.5rem;
-}
+                <div class="grid-item">
+                    <img src="img/fantasia-empregada.jpeg" alt="Mulher fantasiada de empregada estilo vintage">
+                    <div class="item-text">
+                        <h3>Fantasia de Personagem</h3>
+                        <p>Elaboração de figurino e maquiagem para empregada vintage/gótica.</p>
+                    </div>
+                </div>
 
-.grid-item {
-    /* Evita que um item se quebre entre duas colunas */
-    break-inside: avoid;
-    margin-bottom: 1.5rem;
-    border-radius: 8px;
-    overflow: hidden; /* Garante que a borda arredondada pegue na imagem */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    background-color: #ffffff;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+                <div class="grid-item">
+                    <img src="img/fantasia-rocoque.jpeg" alt="Mulher com fantasia de período rococó/barroco">
+                    <div class="item-text">
+                        <h3>Figurino de Época</h3>
+                        <p>Maquiagem e styling inspirados na estética rococó para eventos.</p>
+                    </div>
+                </div>
 
-.grid-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
-}
+                <div class="grid-item">
+                    <img src="img/maquiagem-palhaco.jpeg" alt="Close-up de maquiagem de palhaço com óculos">
+                    <div class="item-text">
+                        <h3>Maquiagem Artística de Palhaço</h3>
+                        <p>Criação de caracterização detalhada para performance e eventos.</p>
+                    </div>
+                </div>
 
-.grid-item img {
-    width: 100%;
-}
+                <div class="grid-item">
+                    <img src="img/noiva-fantasma-proposta.jpeg" alt="Noiva fantasma maquiada sendo pedida em casamento">
+                    <div class="item-text">
+                        <h3>Cena Temática (Noiva Cadáver)</h3>
+                        <p>Maquiagem e direção para cena de "Noiva Cadáver" em evento.</p>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <img src="img/proteorsolar.jpg" alt="Exemplo de imagem de marketing visual criativo (genérica)">
+                    <div class="item-text">
+                        <h3>Marketing Visual Criativo</h3>
+                        <p>Desenvolvimento de conceitos visuais inovadores para campanhas.</p>
+                    </div>
+                </div>
+                 <div class="grid-item">
+                    <img src="img/visual-marketing-criativo.jpeg" alt="Exemplo de imagem de marketing visual criativo (genérica)">
+                    <div class="item-text">
+                        <h3>Marketing Visual Criativo</h3>
+                        <p>Desenvolvimento de conceitos visuais inovadores para campanhas.</p>
+                    </div>
+                </div>
+                
+                <div class="grid-item">
+                    <img src="img/design-social-media.jpeg" alt="Exemplo de design para redes sociais (genérica)">
+                    <div class="item-text">
+                        <h3>Design para Mídias Sociais</h3>
+                        <p>Criação de posts e stories que geram engajamento.</p>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <img src="img/artenegra.jpeg" alt="Exemplo de imagem de marketing visual criativo (genérica)">
+                    <div class="item-text">
+                        <h3>Marketing Visual Criativo</h3>
+                        <p>Desenvolvimento de conceitos visuais inovadores para campanhas.</p>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <img src="img/fotolivro.jpg" alt="Exemplo de imagem de marketing visual criativo (genérica)">
+                    <div class="item-text">
+                        <h3>Marketing Visual Criativo</h3>
+                        <p>Desenvolvimento de conceitos visuais inovadores para campanhas.</p>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <img src="img/fotocafé.jpg" alt="Exemplo de imagem de marketing visual criativo (genérica)">
+                    <div class="item-text">
+                        <h3>Marketing Visual Criativo</h3>
+                        <p>Desenvolvimento de conceitos visuais inovadores para campanhas.</p>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <img src="img/amassado.jpeg" alt="Exemplo de imagem de marketing visual criativo (genérica)">
+                    <div class="item-text">
+                        <h3>Marketing Visual Criativo</h3>
+                        <p>Desenvolvimento de conceitos visuais inovadores para campanhas.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-.item-text {
-    padding: 1rem;
-}
+        <section id="contato" class="contact-section">
+            <div class="container">                
+                <a href="https://www.linkedin.com/in/isabelle-vit%C3%B3ria-21b282275?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="cta-button secondary">Ver LinkedIn</a>
+            </div>
+        </section>
 
-.item-text h3 {
-    font-size: 1.2rem;
-    margin-bottom: 0.25rem;
-}
+    </main>
 
-.item-text p {
-    font-size: 0.9rem;
-    color: #555;
-}
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Isabelle Vitoria Gomes de Moura. Todos os direitos reservados.</p>
+        </div>
+    </footer>
 
-/* ======== SEÇÃO DE CONTATO ======== */
-.contact-section {
-    background-color: #ffffff;
-    text-align: center;
-    padding: 4rem 2rem;
-}
-
-/* ======== RODAPÉ (ATUALIZADO SIMPLES) ======== */
-footer {
-    background-color: var(--cor-primaria);
-    color: var(--cor-secundaria);
-    text-align: center;
-    padding: 2.5rem 0;
-    margin-top: 2rem; /* Espaço acima do rodapé */
-}
-
-footer p {
-    font-size: 0.9rem;
-    margin: 0;
-}
-
-
-/* ======== RESPONSIVIDADE ======== */
-
-/* Para tablets */
-@media (max-width: 1024px) {
-    .masonry-grid {
-        column-count: 2; /* 2 colunas */
-    }
-}
-
-/* Para celulares */
-@media (max-width: 768px) {
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-
-    .nav-links {
-        display: none; /* Em um projeto real, aqui entraria um menu "hambúrguer" com JS */
-    }
-    
-    .masonry-grid {
-        column-count: 1; /* 1 coluna */
-    }
-}
+</body>
+</html>
