@@ -22,7 +22,16 @@ body {
     color: var(--cor-primaria);
     line-height: 1.6;
 }
-
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #f4f4f4; /* Texto branco/cinza claro para legibilidade */
+    
+    /* Efeito de brilho roxo "estilizado" */
+    text-shadow: 0 0 5px rgba(102, 0, 153, 0.6),  /* Brilho principal */
+                 0 0 10px rgba(102, 0, 153, 0.5), /* Brilho mais suave */
+                 0 0 15px var(--cor-vivo-roxo);     /* Brilho mais distante */
+}
 img {
     max-width: 100%;
     height: auto;
@@ -154,3 +163,4 @@ footer p {
         font-size: 2.5rem;
     }
 }
+
