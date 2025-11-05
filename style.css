@@ -68,13 +68,6 @@ img {
 
 .grid-container {
     display: grid;
-    /* Cria um grid responsivo:
-      - Tenta criar colunas de no mínimo 320px.
-      - 1fr faz com que se expandam igualmente para preencher o espaço.
-      - Em telas grandes: 3 colunas.
-      - Em telas médias: 2 colunas.
-      - Em telas pequenas: 1 coluna.
-    */
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 2rem; /* Espaço entre os cards */
 }
@@ -89,10 +82,10 @@ img {
 .card {
     background-color: #ffffff;
     border-radius: 8px;
-    overflow: hidden; /* Garante que a imagem respeite a borda */
+    overflow: hidden;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    height: 100%; /* Faz todos os cards da mesma linha terem a mesma altura */
+    height: 100%;
     display: flex;
     flex-direction: column;
 }
@@ -102,16 +95,23 @@ img {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
 }
 
+/* CORREÇÃO AQUI: Estilo padrão para FOTOS */
 .card img {
     width: 100%;
-    height: 220px; /* Altura fixa para as imagens */
-    object-fit: contain; /* Garante que a imagem inteira caiba */
+    height: 220px; 
+    object-fit: cover; /* Faz as FOTOS cobrirem o espaço */
+}
+
+/* CORREÇÃO AQUI: Estilo especial para LOGOS */
+.card.logo-card img {
+    object-fit: contain; /* Faz os LOGOS caberem no espaço */
     padding: 1rem;       /* Adiciona um "respiro" em volta do logo */
 }
 
+
 .card-content {
     padding: 1.5rem;
-    flex-grow: 1; /* Faz o conteúdo crescer para preencher o card */
+    flex-grow: 1; 
     display: flex;
     flex-direction: column;
 }
@@ -125,13 +125,13 @@ img {
     font-size: 0.9rem;
     color: #555;
     margin-bottom: 1rem;
-    flex-grow: 1; /* Empurra o "Saiba Mais" para o final */
+    flex-grow: 1; 
 }
 
 .card-content span {
     font-weight: 700;
     color: var(--cor-realce);
-    align-self: flex-start; /* Alinha o "botão" */
+    align-self: flex-start;
 }
 
 /* ======== RODAPÉ ======== */
@@ -139,9 +139,9 @@ footer {
     background-color: var(--cor-primaria);
     color: var(--cor-secundaria);
     text-align: center;
-    padding: 2.5rem 0; /* Aumentei o padding para ficar igual ao pessoais.css */
+    padding: 2.5rem 0; 
     font-size: 0.9rem;
-    margin-top: 2rem; /* Espaço acima do rodapé */
+    margin-top: 2rem; 
 }
 
 footer p {
@@ -154,6 +154,3 @@ footer p {
         font-size: 2.5rem;
     }
 }
-
-
-
