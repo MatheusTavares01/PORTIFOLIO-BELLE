@@ -1,110 +1,111 @@
+@@ -1,112 +1,112 @@
 /* ======== CONFIGURAÇÕES GLOBAIS ======== */
 :root {
---cor-primaria: #1a1a1a; /* Um preto/cinza escuro forte */
---cor-secundaria: #f4f4f4; /* Um cinza bem claro para o fundo */
---cor-realce: #007BFF; /* Um azul vibrante */
---fonte-padrao: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --cor-primaria: #1a1a1a; /* Um preto/cinza escuro forte */
+    --cor-secundaria: #f4f4f4; /* Um cinza bem claro para o fundo */
+    --cor-realce: #007BFF; /* Um azul vibrante */
+    --fonte-padrao: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 * {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 html {
-scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 body {
-font-family: var(--fonte-padrao);
-background-color: var(--cor-secundaria);
-color: var(--cor-primaria);
-line-height: 1.6;
+    font-family: var(--fonte-padrao);
+    background-color: var(--cor-secundaria);
+    color: var(--cor-primaria);
+    line-height: 1.6;
 }
 
 img {
-max-width: 100%;
-height: auto;
-display: block;
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
 .container {
-max-width: 1200px;
-margin: 0 auto;
-padding: 0 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 /* ======== CABEÇALHO (ESTILO HERO) ======== */
 .hero-header {
-background-color: var(--cor-primaria);
-color: #ffffff;
-text-align: center;
-padding: 5rem 2rem;
+    background-color: var(--cor-primaria);
+    color: #ffffff;
+    text-align: center;
+    padding: 5rem 2rem;
 }
 
 .hero-header h1 {
-font-size: 3rem;
-margin-bottom: 0.5rem;
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
 }
 
 .hero-header p {
-font-size: 1.25rem;
-font-weight: 300;
-max-width: 600px;
-margin: 0 auto;
+    font-size: 1.25rem;
+    font-weight: 300;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 /* ======== GRID DE PROJETOS ======== */
 .project-grid {
-padding: 4rem 0;
+    padding: 4rem 0;
 }
 
 .project-grid h2 {
-text-align: center;
-font-size: 2.5rem;
-margin-bottom: 3rem;
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
 }
 
 .grid-container {
-display: grid;
-/* Cria um grid responsivo:
-     - Tenta criar colunas de no mínimo 320px.
-     - 1fr faz com que se expandam igualmente para preencher o espaço.
-     - Em telas grandes: 3 colunas.
-     - Em telas médias: 2 colunas.
-     - Em telas pequenas: 1 coluna.
-   */
-grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-gap: 2rem; /* Espaço entre os cards */
+    display: grid;
+    /* Cria um grid responsivo:
+      - Tenta criar colunas de no mínimo 320px.
+      - 1fr faz com que se expandam igualmente para preencher o espaço.
+      - Em telas grandes: 3 colunas.
+      - Em telas médias: 2 colunas.
+      - Em telas pequenas: 1 coluna.
+    */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem; /* Espaço entre os cards */
 }
 
 /* Transforma o card inteiro em um link clicável */
 .card-link {
-text-decoration: none;
-color: inherit;
-display: flex; /* Para garantir que o card preencha o link */
+    text-decoration: none;
+    color: inherit;
+    display: flex; /* Para garantir que o card preencha o link */
 }
 
 .card {
-background-color: #ffffff;
-border-radius: 8px;
-overflow: hidden; /* Garante que a imagem respeite a borda */
-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-transition: transform 0.3s ease, box-shadow 0.3s ease;
-height: 100%; /* Faz todos os cards da mesma linha terem a mesma altura */
-display: flex;
-flex-direction: column;
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden; /* Garante que a imagem respeite a borda */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%; /* Faz todos os cards da mesma linha terem a mesma altura */
+    display: flex;
+    flex-direction: column;
 }
 
 .card:hover {
-transform: translateY(-5px);
-box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
 }
 
 .card img {
-width: 100%;
-height: 220px; /* Altura fixa para as imagens */
+    width: 100%;
+    height: 220px; /* Altura fixa para as imagens */
     object-fit: contain; /* << MUDANÇA 1: Garante que a imagem inteira caiba */
     padding: 1rem;       /* << MUDANÇA 2: Adiciona um "respiro" em volta do logo */
     object-fit: contain; /* Garante que a imagem inteira caiba */
@@ -113,13 +114,13 @@ height: 220px; /* Altura fixa para as imagens */
 
 .card-content {
 @@ -139,14 +139,18 @@
-background-color: var(--cor-primaria);
-color: var(--cor-secundaria);
-text-align: center;
+    background-color: var(--cor-primaria);
+    color: var(--cor-secundaria);
+    text-align: center;
     padding: 2rem 0;
     padding: 2.5rem 0; /* Aumentei o padding para ficar igual ao pessoais.css */
-font-size: 0.9rem;
-margin-top: 2rem; /* Espaço acima do rodapé */
+    font-size: 0.9rem;
+    margin-top: 2rem; /* Espaço acima do rodapé */
 }
 
 footer p {
@@ -128,7 +129,7 @@ footer p {
 
 /* ======== RESPONSIVIDADE ======== */
 @media (max-width: 768px) {
-.hero-header h1 {
-font-size: 2.5rem;
-}
+    .hero-header h1 {
+        font-size: 2.5rem;
+    }
 }
