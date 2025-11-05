@@ -1,166 +1,307 @@
-/* ======== CONFIGURAÇÕES GLOBAIS (TEMA ROXO/DARK) ======== */
+/* ======== CONFIGURAÇÕES GLOBAIS ======== */
 :root {
-    /* == NOVAS CORES (TEMA DARK) == */
-    --cor-fundo: #1E1B3A; /* O roxo-azulado escuro "nada brega" */
-    --cor-texto: #E5E7EB; /* Texto principal (claro) */
-    --cor-superficie: #2A274F; /* Cor dos cards (um pouco mais clara) */
+    --cor-primaria: #1a1a1a; /* Um preto/cinza escuro forte */
+    --cor-secundaria: #f4f4f4; /* Um cinza bem claro para o fundo */
+    --cor-realce: #007BFF; /* Um azul vibrante para botões (ex: azul) */
+    --cor-vivo-roxo: #660099; /* Roxo oficial da Vivo */
+    --cor-primaria: #1a1a1a;
+    --cor-secundaria: #f4f4f4;
     
-    /* == CORES DE ACENTO (PADRONIZADAS) == */
-    --cor-acento-principal: #6366F1; /* Índigo moderno */
-    --cor-acento-secundario: #8B5CF6; /* Violeta complementar */
+    /* == NOVA PALETA DE CORES COM PERSONALIDADE == */
+    --cor-acento-principal: #6366F1; /* Um índigo/violeta moderno */
+    --cor-acento-secundario: #8B5CF6; /* Um violeta complementar */
     --gradiente-moderno: linear-gradient(135deg, var(--cor-acento-principal) 0%, var(--cor-acento-secundario) 100%);
     
+    --cor-vivo-roxo: #660099; /* Roxo oficial da Vivo (usado apenas na seção de experiência) */
     --fonte-padrao: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+@@ -14,7 +19,7 @@
 }
 
 html {
+    scroll-behavior: smooth; /* Rolagem suave ao clicar nos links */
     scroll-behavior: smooth;
 }
 
 body {
-    font-family: var(--fonte-padrao);
-    /* MUDANÇA: Fundo dark e texto claro */
-    background-color: var(--cor-fundo);
-    color: var(--cor-texto);
-    line-height: 1.6;
-}
-
+@@ -27,7 +32,7 @@ body {
 img {
     max-width: 100%;
     height: auto;
+    display: block; /* Remove espaço extra abaixo das imagens */
     display: block;
 }
 
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+@@ -41,7 +46,7 @@ header {
+    background-color: #ffffff;
+    padding: 1rem 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    position: sticky; /* Fica fixo no topo */
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+@@ -55,7 +60,8 @@ header nav {
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--cor-primaria);
+    /* MUDANÇA: Cor com personalidade */
+    color: var(--cor-acento-principal);
 }
 
-/* ======== CABEÇALHO (ESTILO HERO) ======== */
-.hero-header {
-    /* MUDANÇA: Fundo dark sutil */
-    background-image: linear-gradient(135deg, #1E1B3A 0%, #2A274F 100%);
+.nav-links {
+@@ -75,12 +81,15 @@ header nav {
+}
+
+.nav-links a:hover {
+    color: var(--cor-realce);
+    /* MUDANÇA: Usando a nova cor de acento */
+    color: var(--cor-acento-principal);
+}
+
+/* ======== SEÇÃO HERO ======== */
+.hero {
+    /* MUDANÇA: Fundo preto é ótimo, mas vamos dar um gradiente sutil escuro */
+    background-color: var(--cor-primaria);
+    background-image: linear-gradient(135deg, #1a1a1a 0%, #2b2b2b 100%);
     color: #ffffff;
     text-align: center;
-    padding: 5rem 2rem;
-}
-
-.hero-header h1 {
-    font-size: 3rem;
-    margin-bottom: 0.5rem;
-}
-
-.hero-header p {
-    font-size: 1.25rem;
-    font-weight: 300;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-/* ======== GRID DE PROJETOS ======== */
-.project-grid {
-    padding: 4rem 0;
-}
-
-.project-grid h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 3rem;
-}
-
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2rem; /* Espaço entre os cards */
-}
-
-.card-link {
+    padding: 6rem 2rem;
+@@ -101,89 +110,94 @@ header nav {
+/* Botão de Call-to-Action (CTA) */
+.cta-button {
+    display: inline-block;
+    background-color: var(--cor-realce);
+    /* MUDANÇA: De cor sólida para gradiente */
+    background-image: var(--gradiente-moderno);
+    color: #ffffff;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    padding: 0.75rem 1.75rem; /* Um pouco mais de padding lateral */
+    border-radius: 8px; /* Mais arredondado */
     text-decoration: none;
-    color: inherit;
-    display: flex;
-}
-
-.card {
-    /* MUDANÇA: Cor dos cards */
-    background-color: var(--cor-superficie);
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra mais escura */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-}
-
-.card img {
-    width: 100%;
-    height: 220px;
-    object-fit: contain;
-    padding: 1rem;
-    /* MUDANÇA: Adiciona um fundo sutil à imagem para logos transparentes */
-    background-color: rgba(255, 255, 255, 0.03);
-}
-
-.card-content {
-    padding: 1.5rem;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-}
-
-.card-content h3 {
-    font-size: 1.3rem;
-    margin-bottom: 0.5rem;
-    color: #ffffff; /* Títulos dos cards em branco */
-}
-
-.card-content p {
-    font-size: 0.9rem;
-    /* MUDANÇA: Texto mais suave */
-    color: var(--cor-texto);
-    opacity: 0.8;
-    margin-bottom: 1rem;
-    flex-grow: 1;
-}
-
-.card-content span {
     font-weight: 700;
-    /* MUDANÇA: Cor de realce padronizada */
-    color: var(--cor-acento-principal);
-    align-self: flex-start;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none; /* Remove borda caso haja */
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4); /* Sombra da cor do gradiente */
 }
 
-/* ======== RODAPÉ ======== */
-footer {
-    /* MUDANÇA: Fundo do rodapé */
-    background-color: var(--cor-superficie);
-    color: var(--cor-texto);
+.cta-button:hover {
+    background-color: #0056b3; /* Um azul mais escuro no hover */
+    transform: translateY(-2px);
+    /* MUDANÇA: Efeito de "lift" mais pronunciado */
+    background-image: var(--gradiente-moderno);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
+}
+
+.cta-button.secondary {
+    background-image: none; /* Botão secundário não tem gradiente */
+    background-color: #6c757d;
+    margin-left: 1rem;
+    box-shadow: none;
+}
+
+.cta-button.secondary:hover {
+    background-image: none;
+    background-color: #5a6268;
+    transform: translateY(-2px);
+    box-shadow: none;
+}
+
+/* ======== SEÇÃO DE EXPERIÊNCIA (REFEITA COM PERSONALIDADE) ======== */
+/* ======== SEÇÃO DE EXPERIÊNCIA (Estilo do vivo.html) ======== */
+/* Esta seção permanece com o Roxo da Vivo, intencionalmente */
+.experience-section {
+    padding: 5rem 2rem;
+    background-color: #ffffff; /* Fundo branco para destacar */
+    background-color: #ffffff;
+    border-top: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.experience-content-wrapper {
+    display: grid;
+    grid-template-columns: 1fr; /* Mobile-first: 1 coluna */
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    align-items: center;
+}
+
+/* Layout para telas maiores (tablets e desktops) */
+@media (min-width: 768px) {
+    .experience-content-wrapper {
+        /* Layout assimétrico: 1 parte para o título, 2 para o texto */
+        grid-template-columns: 1fr 2fr; 
+        gap: 3rem;
+    }
+}
+
+/* Lado Esquerdo: O Título */
+.experience-title-side {
+    display: flex;
+    justify-content: flex-start; /* Alinha à esquerda no mobile */
+    justify-content: flex-start;
+}
+
+.experience-title-side h2 {
+    font-size: 2.8rem;
+    color: var(--cor-vivo-roxo);
+    line-height: 1.2;
+    font-weight: 700;
+    /* Linha roxa forte para dar personalidade */
+    border-left: 5px solid var(--cor-vivo-roxo);
+    padding-left: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .experience-title-side {
+        justify-content: flex-end; /* Alinha à direita no desktop */
+        justify-content: flex-end;
+    }
+
+    .experience-title-side h2 {
+        border-left: 0;
+        padding-left: 0;
+        /* Vira a borda para a direita */
+        border-right: 5px solid var(--cor-vivo-roxo);
+        padding-right: 1.5rem;
+        text-align: right;
+    }
+}
+
+/* Lado Direito: O Texto */
+.experience-text-side {
+    background-color: #fbf7ff; /* Fundo roxo pálido, como antes */
+    background-color: #fbf7ff;
+    border-radius: 8px;
+    padding: 2.5rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+@@ -196,7 +210,6 @@ header nav {
+    margin-bottom: 1.5rem;
+}
+
+/* A CITAÇÃO EM DESTAQUE */
+.experience-text-side blockquote {
+    font-size: 1.4rem;
+    font-weight: 700;
+@@ -205,10 +218,9 @@ header nav {
+    text-align: center;
+    margin: 2.5rem 0;
+    padding: 1.5rem;
+    /* Bordas roxas duplas para estilo */
+    border-top: 3px solid var(--cor-vivo-roxo);
+    border-bottom: 3px solid var(--cor-vivo-roxo);
+    background-color: #ffffff; /* Fundo branco para destacar do roxo pálido */
+    background-color: #ffffff;
+    border-radius: 8px;
+    quotes: "“" "”";
+}
+@@ -230,43 +242,55 @@ header nav {
+}
+
+.masonry-grid {
+    /* A MÁGICA ACONTECE AQUI */
+    column-count: 3; /* 3 colunas em telas grandes */
+    column-count: 3;
+    column-gap: 1.5rem;
+}
+
+.grid-item {
+    /* Evita que um item se quebre entre duas colunas */
+    break-inside: avoid;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    overflow: hidden; /* Garante que a borda arredondada pegue na imagem */
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    background-color: #ffffff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.grid-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+    /* MUDANÇA: Efeito de "lift" mais forte */
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.grid-item img {
+    width: 100%;
+}
+
+.item-text {
+    padding: 1rem;
+    padding: 1.5rem;
+}
+
+.item-text h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.25rem;
+    margin-bottom: 0.75rem;
+    /* MUDANÇA: Adiciona transição para a cor */
+    transition: color 0.3s ease;
+}
+
+/* MUDANÇA: Título muda de cor no hover */
+.grid-item:hover .item-text h3 {
+    color: var(--cor-acento-principal);
+}
+
+.item-text p {
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.item-text p:last-of-type {
+    margin-bottom: 0;
+}
+
+/* ======== SEÇÃO DE CONTATO ======== */
+@@ -282,7 +306,7 @@ footer {
+    color: var(--cor-secundaria);
     text-align: center;
     padding: 2.5rem 0;
-    font-size: 0.9rem;
+    margin-top: 2rem; /* Espaço acima do rodapé */
     margin-top: 2rem;
 }
 
 footer p {
-    margin: 0;
-    opacity: 0.7;
-}
+@@ -292,25 +316,22 @@ footer p {
+
 
 /* ======== RESPONSIVIDADE ======== */
+
+/* Para tablets */
+@media (max-width: 1024px) {
+    .masonry-grid {
+        column-count: 2; /* 2 colunas */
+        column-count: 2;
+    }
+}
+
+/* Para celulares */
 @media (max-width: 768px) {
-    .hero-header h1 {
+    .hero h1 {
         font-size: 2.5rem;
+    }
+
+    .nav-links {
+        display: none; /* Em um projeto real, aqui entraria um menu "hambúrguer" com JS */
+        display: none;
+    }
+
+    .masonry-grid {
+        column-count: 1; /* 1 coluna */
+        column-count: 1;
     }
 }
