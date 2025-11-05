@@ -98,216 +98,6 @@ header nav {
     font-weight: 300;
 }
 
-/* Botão de Call-to-action (CTA) */
-.cta-button {
-    display: inline-block;
-    background-color: var(--cor-realce);
-    color: #ffffff;
-    padding: 0.75rem 1.5rem;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: 700;
-    transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-.cta-button:hover {
-    background-color: #0056b3; /* Um azul mais escuro no hover */
-    transform: translateY(-2px);
-}
-
-.cta-button.secondary {
-    background-color: #6c757d;
-    margin-left: 1rem;
-}
-
-.cta-button.secondary:hover {
-    background-color: #5a6268;
-}
-
-/* ======== SEÇÃO DE EXPERIÊNCIA (REFEITA COM PERSONALIDADE) ======== */
-.experience-section {
-    padding: 5rem 2rem;
-    background-color: #ffffff; /* Fundo branco para destacar */
-    border-top: 1px solid #e0e0e0;
-    border-bottom: 1px solid #e0e0e0;
-}
-
-.experience-content-wrapper {
-    display: grid;
-    grid-template-columns: 1fr; /* Mobile-first: 1 coluna */
-    gap: 2rem;
-    max-width: 1100px;
-    margin: 0 auto;
-    align-items: center;
-}
-
-/* Layout para telas maiores (tablets e desktops) */
-@media (min-width: 768px) {
-    .experience-content-wrapper {
-        /* Layout assimétrico: 1 parte para o título, 2 para o texto */
-        grid-template-columns: 1fr 2fr; 
-        gap: 3rem;
-    }
-}
-
-/* Lado Esquerdo: O Título */
-.experience-title-side {
-    display: flex;
-    justify-content: flex-start; /* Alinha à esquerda no mobile */
-}
-
-.experience-title-side h2 {
-    font-size: 2.8rem;
-    color: var(--cor-vivo-roxo);
-    line-height: 1.2;
-    font-weight: 700;
-    /* Linha roxa forte para dar personalidade */
-    border-left: 5px solid var(--cor-vivo-roxo);
-    padding-left: 1.5rem;
-}
-
-@media (min-width: 768px) {
-    .experience-title-side {
-        justify-content: flex-end; /* Alinha à direita no desktop */
-    }
-    
-    .experience-title-side h2 {
-        border-left: 0;
-        padding-left: 0;
-        /* Vira a borda para a direita */
-        border-right: 5px solid var(--cor-vivo-roxo);
-        padding-right: 1.5rem;
-        text-align: right;
-    }
-}
-
-/* Lado Direito: O Texto */
-.experience-text-side {
-    background-color: #fbf7ff; /* Fundo roxo pálido, como antes */
-    border-radius: 8px;
-    padding: 2.5rem;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
-}
-
-.experience-text-side p {
-    font-size: 1.1rem;
-    color: #333;
-    line-height: 1.7;
-    margin-bottom: 1.5rem;
-}
-
-/* A CITAÇÃO EM DESTAQUE */
-.experience-text-side blockquote {
-    font-size: 1.4rem;
-    font-weight: 700;
-    line-height: 1.5;
-    color: var(--cor-vivo-roxo);
-    text-align: center;
-    margin: 2.5rem 0;
-    padding: 1.5rem;
-    /* Bordas roxas duplas para estilo */
-    border-top: 3px solid var(--cor-vivo-roxo);
-    border-bottom: 3px solid var(--cor-vivo-roxo);
-    background-color: #ffffff; /* Fundo branco para destacar do roxo pálido */
-    border-radius: 8px;
-    quotes: "“" "”";
-}
-
-.experience-text-side p:last-child {
-    margin-bottom: 0;
-}
-
-
-/* ======== GALERIA MASONRY ======== */
-.gallery-section {
-    padding: 4rem 2rem;
-}
-
-.gallery-section h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 3rem;
-}
-
-/* Estilização para o novo bloco de texto personalizado */
-.text-block {
-    max-width: 900px; /* Um pouco mais largo que o padrão para mais destaque */
-    margin: 0 auto 3rem auto; /* Centraliza e adiciona margem inferior */
-    padding: 2.5rem; /* Aument
-img {
-    max-width: 100%;
-    height: auto;
-    display: block; /* Remove espaço extra abaixo das imagens */
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* ======== CABEÇALHO E NAVEGAÇÃO ======== */
-header {
-    background-color: #ffffff;
-    padding: 1rem 0;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    position: sticky; /* Fica fixo no topo */
-    top: 0;
-    z-index: 100;
-}
-
-header nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--cor-primaria);
-}
-
-.nav-links {
-    list-style: none;
-    display: flex;
-}
-
-.nav-links li {
-    margin-left: 2rem;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: var(--cor-primaria);
-    font-weight: 400;
-    transition: color 0.3s ease;
-}
-
-.nav-links a:hover {
-    color: var(--cor-realce);
-}
-
-/* ======== SEÇÃO HERO ======== */
-.hero {
-    background-color: var(--cor-primaria);
-    color: #ffffff;
-    text-align: center;
-    padding: 6rem 2rem;
-}
-
-.hero h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-}
-
-.hero p {
-    font-size: 1.25rem;
-    max-width: 600px;
-    margin: 0 auto 2rem auto;
-    font-weight: 300;
-}
-
 /* Botão de Call-to-Action (CTA) */
 .cta-button {
     display: inline-block;
@@ -439,6 +229,36 @@ header nav {
     margin-bottom: 3rem;
 }
 
+/* Estilização COMPLETA para o novo bloco de texto personalizado */
+.text-block {
+    max-width: 900px;
+    margin: 0 auto 3rem auto;
+    padding: 2.5rem; 
+    /* Gradiente de roxo para azul com efeito de sombra */
+    background-image: linear-gradient(135deg, var(--cor-vivo-roxo) 0%, var(--cor-realce) 100%);
+    color: #ffffff; /* Texto branco para contraste */
+    border-radius: 12px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); 
+}
+
+.text-block p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #ffffff; /* Garante que o texto seja branco */
+    margin-bottom: 1rem;
+    font-weight: 300; /* Deixa a leitura mais leve */
+}
+
+.text-block p strong {
+    color: #ffd700; /* Destaque em amarelo (Ouro) para palavras-chave, para contrastar com o roxo/azul */
+    font-weight: 700;
+}
+
+.text-block p:last-child {
+    margin-bottom: 0;
+}
+
+
 .masonry-grid {
     column-count: 3; /* 3 colunas em telas grandes */
     column-gap: 1.5rem;
@@ -461,28 +281,13 @@ header nav {
 
 .grid-item img {
     width: 100%;
+    /* Garante que a imagem preencha o espaço sem as descrições */
+    display: block;
+    border-radius: 8px;
 }
 
-.item-text {
-    padding: 1.5rem; /* Aumentei o padding */
-}
+/* REGRAS REMOVIDAS: item-text, item-text h3, item-text p */
 
-.item-text h3 {
-    font-size: 1.2rem;
-    margin-bottom: 0.75rem; /* Aumentei a margem */
-}
-
-/* ATUALIZAÇÃO AQUI para os novos parágrafos */
-.item-text p {
-    font-size: 0.9rem;
-    color: #555;
-    line-height: 1.6;
-    margin-bottom: 1rem; /* Adiciona espaço entre parágrafos */
-}
-
-.item-text p:last-of-type {
-    margin-bottom: 0; /* Remove a margem do último parágrafo */
-}
 
 /* ======== SEÇÃO DE CONTATO ======== */
 .contact-section {
@@ -529,7 +334,3 @@ footer p {
         column-count: 1; /* 1 coluna */
     }
 }
-
-
-
-
