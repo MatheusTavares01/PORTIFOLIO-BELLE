@@ -27,6 +27,7 @@
 
             <div class="grid-container">
                 
+                <!-- Card de Foto Pessoal (usa 'object-fit: cover' por padrão) -->
                 <a href="pessoais.html" class="card-link">
                     <div class="card">
                         <img src="img/FOTOPERFIL.jpg" alt="Foto pessoal de perfil">
@@ -38,9 +39,11 @@
                     </div>
                 </a>
 
+                <!-- Card da Vivo (usa 'object-fit: cover' por padrão) -->
                 <a href="vivo.html" class="card-link">
                     <div class="card">
-                        <img src="img/img/VIVOFUNDO.jpg" alt="Projetos VIVO">
+                        <!-- CORREÇÃO AQUI: Removido o 'img/' duplicado -->
+                        <img src="img/VIVOFUNDO.jpg" alt="Projetos VIVO">
                         <div class="card-content">
                             <h3>Projetos Realizados na VIVO</h3>
                             <p>Principais projetos, resultados e aprendizados obtidos ao longo da experiência de estágio na Vivo Telefônica.</p>
@@ -49,8 +52,10 @@
                     </div>
                 </a>
 
+                <!-- Card de Logo (usa a classe especial 'logo-card') -->
                 <a href="https://legalso.github.io/ecoloop-website/" class="card-link" target="_blank">
-                    <div class="card">
+                    <!-- CORREÇÃO AQUI: Adicionada a classe 'logo-card' -->
+                    <div class="card logo-card">
                         <img src="img/Ecoloop logo.PNG" alt="Logo Ecoloop">
                         <div class="card-content">
                             <h3>Ecoloop</h3>
@@ -72,7 +77,3 @@
 
 </body>
 </html>
-
-
-
-
