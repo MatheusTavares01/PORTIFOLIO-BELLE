@@ -1,3 +1,44 @@
+/* ... (todo o CSS anterior) ... */
+
+/* ======== SEÇÃO DE EXPERIÊNCIA (NOVO BLOCO ÚNICO) ======== */
+.experience-box-section {
+    padding: 4rem 2rem;
+    background-color: #ffffff; 
+}
+
+.experience-box {
+    max-width: 800px; /* Define uma largura máxima para o bloco */
+    margin: 0 auto; /* Centraliza o bloco na página */
+    background-color: #fbf7ff; /* Tom de roxo bem claro */
+    border-radius: 8px;
+    padding: 2.5rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+    border-top: 5px solid var(--cor-vivo-roxo); /* Detalhe roxo */
+}
+
+.experience-box h2 {
+    color: var(--cor-vivo-roxo);
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.experience-box p {
+    font-size: 1.1rem;
+    color: #333;
+    line-height: 1.7;
+    margin-bottom: 1.5rem; /* Espaço entre os parágrafos */
+}
+
+/* Remove a margem do último parágrafo */
+.experience-box p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* ======== GALERIA MASONRY ======== */
+/* ... (o restante do seu CSS continua) ... */
+
 /* ======== CONFIGURAÇÕES GLOBAIS ======== */
 :root {
     --cor-primaria: #1a1a1a; 
@@ -146,3 +187,4 @@ footer p {
         font-size: 2.5rem;
     }
 }
+
