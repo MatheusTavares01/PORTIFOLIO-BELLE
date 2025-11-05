@@ -1,166 +1,134 @@
-/* ======== CONFIGURAÇÕES GLOBAIS (TEMA ROXO/DARK) ======== */
+/* ======== CONFIGURAÇÕES GLOBAIS ======== */
 :root {
-    /* == NOVAS CORES (TEMA DARK) == */
-    --cor-fundo: #1E1B3A; /* O roxo-azulado escuro "nada brega" */
-    --cor-texto: #E5E7EB; /* Texto principal (claro) */
-    --cor-superficie: #2A274F; /* Cor dos cards (um pouco mais clara) */
-    
-    /* == CORES DE ACENTO (PADRONIZADAS) == */
-    --cor-acento-principal: #6366F1; /* Índigo moderno */
-    --cor-acento-secundario: #8B5CF6; /* Violeta complementar */
-    --gradiente-moderno: linear-gradient(135deg, var(--cor-acento-principal) 0%, var(--cor-acento-secundario) 100%);
-    
-    --fonte-padrao: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+--cor-primaria: #1a1a1a; /* Um preto/cinza escuro forte */
+--cor-secundaria: #f4f4f4; /* Um cinza bem claro para o fundo */
+--cor-realce: #007BFF; /* Um azul vibrante */
+--fonte-padrao: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+margin: 0;
+padding: 0;
+box-sizing: border-box;
 }
 
 html {
-    scroll-behavior: smooth;
+scroll-behavior: smooth;
 }
 
 body {
-    font-family: var(--fonte-padrao);
-    /* MUDANÇA: Fundo dark e texto claro */
-    background-color: var(--cor-fundo);
-    color: var(--cor-texto);
-    line-height: 1.6;
+font-family: var(--fonte-padrao);
+background-color: var(--cor-secundaria);
+color: var(--cor-primaria);
+line-height: 1.6;
 }
 
 img {
-    max-width: 100%;
-    height: auto;
-    display: block;
+max-width: 100%;
+height: auto;
+display: block;
 }
 
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+max-width: 1200px;
+margin: 0 auto;
+padding: 0 20px;
 }
 
 /* ======== CABEÇALHO (ESTILO HERO) ======== */
 .hero-header {
-    /* MUDANÇA: Fundo dark sutil */
-    background-image: linear-gradient(135deg, #1E1B3A 0%, #2A274F 100%);
-    color: #ffffff;
-    text-align: center;
-    padding: 5rem 2rem;
+background-color: var(--cor-primaria);
+color: #ffffff;
+text-align: center;
+padding: 5rem 2rem;
 }
 
 .hero-header h1 {
-    font-size: 3rem;
-    margin-bottom: 0.5rem;
+font-size: 3rem;
+margin-bottom: 0.5rem;
 }
 
 .hero-header p {
-    font-size: 1.25rem;
-    font-weight: 300;
-    max-width: 600px;
-    margin: 0 auto;
+font-size: 1.25rem;
+font-weight: 300;
+max-width: 600px;
+margin: 0 auto;
 }
 
 /* ======== GRID DE PROJETOS ======== */
 .project-grid {
-    padding: 4rem 0;
+padding: 4rem 0;
 }
 
 .project-grid h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 3rem;
+text-align: center;
+font-size: 2.5rem;
+margin-bottom: 3rem;
 }
 
 .grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2rem; /* Espaço entre os cards */
+display: grid;
+/* Cria um grid responsivo:
+     - Tenta criar colunas de no mínimo 320px.
+     - 1fr faz com que se expandam igualmente para preencher o espaço.
+     - Em telas grandes: 3 colunas.
+     - Em telas médias: 2 colunas.
+     - Em telas pequenas: 1 coluna.
+   */
+grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+gap: 2rem; /* Espaço entre os cards */
 }
 
+/* Transforma o card inteiro em um link clicável */
 .card-link {
-    text-decoration: none;
-    color: inherit;
-    display: flex;
+text-decoration: none;
+color: inherit;
+display: flex; /* Para garantir que o card preencha o link */
 }
 
 .card {
-    /* MUDANÇA: Cor dos cards */
-    background-color: var(--cor-superficie);
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra mais escura */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
+background-color: #ffffff;
+border-radius: 8px;
+overflow: hidden; /* Garante que a imagem respeite a borda */
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+height: 100%; /* Faz todos os cards da mesma linha terem a mesma altura */
+display: flex;
+flex-direction: column;
 }
 
 .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+transform: translateY(-5px);
+box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
 }
 
 .card img {
-    width: 100%;
-    height: 220px;
-    object-fit: contain;
-    padding: 1rem;
-    /* MUDANÇA: Adiciona um fundo sutil à imagem para logos transparentes */
-    background-color: rgba(255, 255, 255, 0.03);
+width: 100%;
+height: 220px; /* Altura fixa para as imagens */
+    object-fit: contain; /* << MUDANÇA 1: Garante que a imagem inteira caiba */
+    padding: 1rem;       /* << MUDANÇA 2: Adiciona um "respiro" em volta do logo */
+    object-fit: contain; /* Garante que a imagem inteira caiba */
+    padding: 1rem;       /* Adiciona um "respiro" em volta do logo */
 }
 
 .card-content {
-    padding: 1.5rem;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-}
-
-.card-content h3 {
-    font-size: 1.3rem;
-    margin-bottom: 0.5rem;
-    color: #ffffff; /* Títulos dos cards em branco */
-}
-
-.card-content p {
-    font-size: 0.9rem;
-    /* MUDANÇA: Texto mais suave */
-    color: var(--cor-texto);
-    opacity: 0.8;
-    margin-bottom: 1rem;
-    flex-grow: 1;
-}
-
-.card-content span {
-    font-weight: 700;
-    /* MUDANÇA: Cor de realce padronizada */
-    color: var(--cor-acento-principal);
-    align-self: flex-start;
-}
-
-/* ======== RODAPÉ ======== */
-footer {
-    /* MUDANÇA: Fundo do rodapé */
-    background-color: var(--cor-superficie);
-    color: var(--cor-texto);
-    text-align: center;
-    padding: 2.5rem 0;
-    font-size: 0.9rem;
-    margin-top: 2rem;
+@@ -139,14 +139,18 @@
+background-color: var(--cor-primaria);
+color: var(--cor-secundaria);
+text-align: center;
+    padding: 2rem 0;
+    padding: 2.5rem 0; /* Aumentei o padding para ficar igual ao pessoais.css */
+font-size: 0.9rem;
+margin-top: 2rem; /* Espaço acima do rodapé */
 }
 
 footer p {
     margin: 0;
-    opacity: 0.7;
 }
 
 /* ======== RESPONSIVIDADE ======== */
 @media (max-width: 768px) {
-    .hero-header h1 {
-        font-size: 2.5rem;
-    }
+.hero-header h1 {
+font-size: 2.5rem;
+}
 }
