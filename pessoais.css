@@ -1,8 +1,8 @@
 /* ======== CONFIGURAÇÕES GLOBAIS ======== */
 :root {
-    --cor-primaria: #1a1a1a; /* Um preto/cinza escuro forte */
-    --cor-secundaria: #f4f4f4; /* Um cinza bem claro para o fundo */
-    --cor-realce: #007BFF; /* Um azul vibrante para botões (ex: azul) */
+    --cor-primaria: #1a1a1a; 
+    --cor-secundaria: #f4f4f4; 
+    --cor-realce: #007BFF; 
     --fonte-padrao: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
@@ -13,7 +13,7 @@
 }
 
 html {
-    scroll-behavior: smooth; /* Rolagem suave ao clicar nos links */
+    scroll-behavior: smooth;
 }
 
 body {
@@ -26,7 +26,7 @@ body {
 img {
     max-width: 100%;
     height: auto;
-    display: block; /* Remove espaço extra abaixo das imagens */
+    display: block;
 }
 
 .container {
@@ -35,193 +35,114 @@ img {
     padding: 0 20px;
 }
 
-/* ======== CABEÇALHO E NAVEGAÇÃO ======== */
-header {
-    background-color: #ffffff;
-    padding: 1rem 0;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    position: sticky; /* Fica fixo no topo */
-    top: 0;
-    z-index: 100;
-}
-
-header nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--cor-primaria);
-}
-
-.nav-links {
-    list-style: none;
-    display: flex;
-}
-
-.nav-links li {
-    margin-left: 2rem;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: var(--cor-primaria);
-    font-weight: 400;
-    transition: color 0.3s ease;
-}
-
-.nav-links a:hover {
-    color: var(--cor-realce);
-}
-
-/* ======== SEÇÃO HERO ======== */
-.hero {
+/* ======== CABEÇALHO (ESTILO HERO) ======== */
+.hero-header {
     background-color: var(--cor-primaria);
     color: #ffffff;
     text-align: center;
-    padding: 6rem 2rem;
+    padding: 5rem 2rem;
 }
 
-.hero h1 {
+.hero-header h1 {
     font-size: 3rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
 }
 
-.hero p {
+.hero-header p {
     font-size: 1.25rem;
-    max-width: 600px;
-    margin: 0 auto 2rem auto;
     font-weight: 300;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
-/* Botão de Call-to-Action (CTA) */
-.cta-button {
-    display: inline-block;
-    background-color: var(--cor-realce);
-    color: #ffffff;
-    padding: 0.75rem 1.5rem;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: 700;
-    transition: transform 0.3s ease, background-color 0.3s ease;
+/* ======== GRID DE PROJETOS ======== */
+.project-grid {
+    padding: 4rem 0;
 }
 
-.cta-button:hover {
-    background-color: #0056b3; /* Um azul mais escuro no hover */
-    transform: translateY(-2px);
-}
-
-.cta-button.secondary {
-    background-color: #6c757d;
-    margin-left: 1rem;
-}
-
-.cta-button.secondary:hover {
-    background-color: #5a6268;
-}
-
-
-/* ======== GALERIA MASONRY ======== */
-.gallery-section {
-    padding: 4rem 2rem;
-}
-
-.gallery-section h2 {
+.project-grid h2 {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 3rem;
 }
 
-.masonry-grid {
-    /* A MÁGICA ACONTECE AQUI */
-    column-count: 3; /* 3 colunas em telas grandes */
-    column-gap: 1.5rem;
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem; 
 }
 
-.grid-item {
-    /* Evita que um item se quebre entre duas colunas */
-    break-inside: avoid;
-    margin-bottom: 1.5rem;
-    border-radius: 8px;
-    overflow: hidden; /* Garante que a borda arredondada pegue na imagem */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+.card-link {
+    text-decoration: none;
+    color: inherit;
+    display: flex; 
+}
+
+.card {
     background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden; 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%; 
+    display: flex;
+    flex-direction: column;
 }
 
-.grid-item:hover {
+.card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
 }
 
-.grid-item img {
+.card img {
     width: 100%;
+    height: 220px; 
+    object-fit: contain; /* Alterado para 'contain' */
+    padding: 1rem;       
 }
 
-.item-text {
-    padding: 1rem;
+.card-content {
+    padding: 1.5rem;
+    flex-grow: 1; 
+    display: flex;
+    flex-direction: column;
 }
 
-.item-text h3 {
-    font-size: 1.2rem;
-    margin-bottom: 0.25rem;
+.card-content h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
 }
 
-.item-text p {
+.card-content p {
     font-size: 0.9rem;
     color: #555;
-}
-
-/* ======== SEÇÃO DE CONTATO ======== */
-.contact-section {
-    background-color: #ffffff;
-    text-align: center;
-    padding: 4rem 2rem;
-}
-
-.contact-section h2 {
-    font-size: 2.5rem;
     margin-bottom: 1rem;
+    flex-grow: 1; 
 }
 
-.contact-section p {
-    font-size: 1.1rem;
-    margin-bottom: 2rem;
+.card-content span {
+    font-weight: 700;
+    color: var(--cor-realce);
+    align-self: flex-start; 
 }
 
-/* ======== RODAPÉ ======== */
+/* ======== RODAPÉ (ATUALIZADO SIMPLES) ======== */
 footer {
     background-color: var(--cor-primaria);
     color: var(--cor-secundaria);
     text-align: center;
-    padding: 2rem 0;
+    padding: 2.5rem 0;
+    margin-top: 2rem; /* Espaço acima do rodapé */
+}
+
+footer p {
     font-size: 0.9rem;
+    margin: 0;
 }
 
-
-/* ======== RESPONSIVIDADE (MUITO IMPORTANTE) ======== */
-
-/* Para tablets */
-@media (max-width: 1024px) {
-    .masonry-grid {
-        column-count: 2; /* 2 colunas */
-    }
-}
-
-/* Para celulares */
+/* ======== RESPONSIVIDADE ======== */
 @media (max-width: 768px) {
-    .hero h1 {
+    .hero-header h1 {
         font-size: 2.5rem;
-    }
-
-    .nav-links {
-        display: none; /* Em um projeto real, aqui entraria um menu "hambúrguer" com JS */
-    }
-    
-    .masonry-grid {
-        column-count: 1; /* 1 coluna */
     }
 }
